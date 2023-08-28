@@ -1,0 +1,131 @@
+
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: whitesmoke;
+    
+}
+a {
+    color: white;
+  }
+ul{
+    list-style: none;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-links li{
+    margin: 0 30px;
+}
+.active{
+    color: #fc036b;
+    text-decoration: underline;
+    font-weight: bold;
+}
+a:hover{
+    color: #fc036b;
+    cursor: pointer;
+}
+
+.header {
+    background-image: url('./img/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+  }
+  
+  .header-content {
+    max-width: 900px;
+    padding: 50px;
+  }
+  
+  .header-title {
+    font-size: 7vmin;
+    margin-bottom: 10px;
+  }
+  
+  .header-subtitle {
+    font-size: 3vmin;
+    margin-bottom: 5px;
+  }
+  
+.events{
+    width: 95%;
+    margin: 70px auto;
+    padding: 70px;
+    background: rgba(0, 0, 0, 0.808);
+}
+.title{
+    text-align: center;
+    font-size: 4vmin;
+    color: whitesmoke;
+}
+.card-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  
+  .card {
+    flex: 0 0 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .about{
+    width: 95%;
+    margin: 70px auto;
+    padding: 30px;
+    padding-left: 80px;
+    font-size: 2vmin;
+  }
+
+  footer{
+    color: white;
+    background: black;
+    padding: 2rem;
+    grid-area: footer;
+    text-align: center;
+  }
+  footer i{
+    background: white;
+    color:black;
+    padding: 0.5rem;
+    margin: 1rem 0.2rem;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+footer i:hover{
+    background: #1c1c1d;
+    color: white;
+    cursor: pointer;
+}
+.card-title{
+    color: black;
+    font-size: 25px;
+}
+.card-text{
+    color: black;
+    font-size: 15px;
+}
+  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Country Details</title>
+</head>
+<body>
+<header>
+  <h1>Country Details</h1>
+  <a href="index.html">Back</a>
+</header>
+<div id="container">
+  <div id="selectedCountry" class="selected-country"></div>
+</div>
+<script>
+  const selectedCountry = document.getElementById("selectedCountry");
+
+  // Fetch country data and display details
+  const params = new URLSearchParams(window.location.search);
+  const countryName = params.get("country");
+
+  fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+    .then(response => response.json())
+    .then(data => {
+      const country = data[0];
+      const countryDetails = `
+        <h2>${country.name.common}</h2>
+        <p>Capital: ${country.capital}</p>
+        <p>Population: ${country.population}</p>
+        <p>Region: ${country.region}</p>
+        <p>Subregion: ${country.subregion}</p>
+        <p>Languages: ${Object.values(country.languages).join(", ")}</p>
+        <p>Geographical Area: ${country.area} km²</p>
+        <p>Continent: ${country.continents.join(", ")}</p>
+        <img src="${country.flags.png}" alt="${country.name.common} Flag">
+      `;
+      selectedCountry.innerHTML = countryDetails;
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+      selectedCountry.textContent = "An error occurred while fetching data.";
+    });
+</script>
+</body>
+</html>
